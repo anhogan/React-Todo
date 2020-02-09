@@ -12,9 +12,12 @@ const ToDoList = props => {
           toggleComplete={props.toggleComplete} />
       ))}
       <div>
-        <ToDoForm />
-        <button
-          onClick={props.clearCompleted}>Clear Completed</button>
+        <ToDoForm 
+          handleSubmit={props.handleSubmit}
+          handleChange={props.handleChange}
+          newTodo={props.newTodo}
+          addTodo={props.addTodo}
+          clearCompleted={props.clearCompleted} />
       </div>
     </div>
   )

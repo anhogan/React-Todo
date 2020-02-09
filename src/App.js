@@ -41,6 +41,10 @@ class App extends React.Component {
         <ToDoList
           todos={this.state.todoList}
           toggleComplete={this.toggleComplete}
+          handleSubmit={this.handleSubmit}
+          handleChange={this.handleChange}
+          newTodo={this.state.newTask}
+          addTodo={this.addTodo}
           clearCompleted={this.clearCompleted} />
       </div>
     );
