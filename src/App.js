@@ -3,7 +3,7 @@ import ToDoList from './components/TodoComponents/TodoList';
 
 const todo = [
   {
-  task: "Build To Do List",
+  task: "Build To-Do List",
   id: 1,
   completed: false
   },
