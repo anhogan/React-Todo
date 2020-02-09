@@ -51,7 +51,7 @@ class App extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.addNewItem(this.state.newTask);
+    this.addTodo(this.state.newTask);
   };
 
   handleChange = (event) => {
