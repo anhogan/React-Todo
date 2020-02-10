@@ -16,7 +16,6 @@ const ToDoList = props => {
           handleSubmit={props.handleSubmit}
           handleChange={props.handleChange}
           newTodo={props.newTodo}
-          addTodo={props.addTodo}
           clearCompleted={props.clearCompleted} />
       </div>
     </div>
