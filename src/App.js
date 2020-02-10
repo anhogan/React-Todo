@@ -1,6 +1,7 @@
 import React from 'react';
 import ToDoList from './components/TodoComponents/TodoList';
 import './App.css';
+import ToDoItems from './components/TodoComponents/Todo';
 
 const todo = [
   {
@@ -35,19 +36,36 @@ class App extends React.Component {
   };
 
   toggleComplete = (id) => {
-    const newState = {
-      ...this.state,
-      todoList: this.state.todoList.map(task => {
-        if (task.id === id) {
-          return {
-            ...task,
-            completed: !task.completed
-          };
+    const newTodoList = this.state.todoList.map((task) => {
+      if(task.id === id) {
+        return {
+          ...task,
+          completed: !task.completed
         }
+      } else {
         return task;
-      })
-    };
-    this.setState(newState);
+      };
+    });
+
+    this.setState({
+      todoList: newTodoList
+    });
+
+    // const newState = {
+    //   ...this.state,
+    //   todoList: this.state.todoList.map(task => {
+    //     if (task.id === id) {
+    //       return {
+    //         ...task,
+    //         completed: !task.completed
+    //       };
+    //     } else {
+    //       return task;
+    //     }
+    //   })
+    // };
+
+    // this.setState(newState);
   };
 
   handleSubmit = (event) => {
@@ -60,26 +78,45 @@ class App extends React.Component {
   };
 
   addTodo = (newToDo) => {
-    const newState = {
-      ...this.state,
-      todoList: [
-        ...this.state.todoList,
-        { task: newToDo, completed: false, id: Date.now() }
-      ],
-      newTask: ""
+    const newTask = {
+      task: newToDo,
+      completed: false,
+      id: Date.now()
     };
-    this.setState(newState);
+
+    this.setState({
+      todoList: [...this.state.todoList, newTask],
+      newTask: ''
+    });
+
+    // const newState = {
+    //   ...this.state,
+    //   todoList: [
+    //     ...this.state.todoList,
+    //     { task: newToDo, completed: false, id: Date.now() }
+    //   ],
+    //   newTask: ""
+    // };
+    // this.setState(newState);
   };
 
   clearCompleted = (event) => {
     event.preventDefault();
-    const newState = {
-      ...this.state,
-      todoList: this.state.todoList.filter(task => {
-        return !task.completed;
-      })
-    };
-    this.setState(newState);
+    const newState = this.state.todoList.filter((task) => {
+      return !task.completed;
+    });
+
+    this.setState({
+      todoList: newState
+    });
+
+    // const newState = {
+    //   ...this.state,
+    //   todoList: this.state.todoList.filter(task => {
+    //     return !task.completed;
+    //   })
+    // };
+    // this.setState(newState);
   };
   
   render() {
