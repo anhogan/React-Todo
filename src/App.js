@@ -1,5 +1,6 @@
 import React from 'react';
 import ToDoList from './components/TodoComponents/TodoList';
+import './App.css';
 
 const todo = [
   {
@@ -31,7 +32,7 @@ class App extends React.Component {
       todoList: todo,
       newTask: ""
     };
-    this.initialState = this.state 
+    // this.initialState = this.state;
   };
 
   toggleComplete = (id) => {
@@ -86,8 +87,8 @@ class App extends React.Component {
   
   render() {
     return (
-      <div>
-        <h2>Welcome to your To-Do App!</h2>
+      <div className="container">
+        <h2>To-Do List</h2>
         <ToDoList
           todos={this.state.todoList}
           toggleComplete={this.toggleComplete}

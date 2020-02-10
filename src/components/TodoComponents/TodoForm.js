@@ -8,8 +8,10 @@ const ToDoForm = props => {
         type="text"
         name="todo-item"
         value={props.newTodo} />
-      <button>Add To-Do</button>
-      <button onClick={props.clearCompleted}>Clear Completed</button>
+        <div className="buttons">
+          <button>Add To-Do</button>
+          <button onClick={props.clearCompleted}>Clear Completed</button>
+        </div>
     </form>
   )
 };

@@ -1,0 +1,15 @@
+body {
+  background: lightgrey;
+}
+
+.container {
+  width: 100%;
+  padding: 1%;
+}
+
+h2 {
+  text-align: center;
+  color: coral;
+  margin-top: 0;
+  font-size: 2rem;
+}
