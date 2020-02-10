@@ -7,6 +7,7 @@ const ToDoForm = props => {
         onChange={props.handleChange}
         type="text"
         name="todo-item"
+        placeholder="To-Do"
         value={props.newTodo} />
         <div className="buttons">
           <button>Add To-Do</button>
