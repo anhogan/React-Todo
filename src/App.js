@@ -70,7 +70,8 @@ class App extends React.Component {
       todoList: [
         ...this.state.todoList,
         { task: newToDo, completed: false, id: Date.now() }
-      ]
+      ],
+      newTask: ""
     };
     this.setState(newState);
   };
