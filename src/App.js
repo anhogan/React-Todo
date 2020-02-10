@@ -31,6 +31,7 @@ class App extends React.Component {
       todoList: todo,
       newTask: ""
     };
+    this.initialState = this.state 
   };
 
   toggleComplete = (id) => {
@@ -53,6 +54,10 @@ class App extends React.Component {
     event.preventDefault();
     this.addTodo(this.state.newTask);
   };
+
+  // resetForm = () => {
+  //   this.setState(this.initialState);
+  // };
 
   handleChange = (event) => {
     this.setState({ ...this.state, newTask: event.target.value });
@@ -88,6 +93,7 @@ class App extends React.Component {
           toggleComplete={this.toggleComplete}
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
+          // resetForm={this.resetForm}
           newTodo={this.state.newTask}
           clearCompleted={this.clearCompleted} />
       </div>
