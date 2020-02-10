@@ -71,7 +71,8 @@ class App extends React.Component {
     this.setState(newState);
   };
 
-  clearCompleted = () => {
+  clearCompleted = (event) => {
+    event.preventDefault();
     const newState = {
       ...this.state,
       todoList: this.state.todoList.filter(task => {
