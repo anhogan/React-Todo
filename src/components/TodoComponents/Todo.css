@@ -16,6 +16,11 @@
   cursor: pointer;
 }
 
+.taskfalse span:hover {
+  cursor: pointer;
+  color: coral;
+}
+
 .tasktrue {
   font-size: 1.2rem;
   margin: 1%;
